@@ -1,0 +1,468 @@
+/*  GENERAL  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f1f4fb;
+    color: #101b38;
+    min-height: 100vh;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/*  NAVBAR  */
+
+.navbar {
+    background: #101a38;
+    padding: 14px 28px;
+    margin: 14px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(15, 27, 56, 0.18);
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.brand > i {
+    font-size: 38px;
+    color: #ff343f;
+}
+
+.brand h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.brand h2 span {
+    color: #ff343f;
+}
+
+.brand small {
+    color: #b8c3df;
+    font-size: 12px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link {
+    color: #e4e9f6;
+    padding: 13px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link i {
+    margin-right: 7px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #f52f3d;
+    color: white;
+    box-shadow: 0 5px 15px rgba(245, 47, 61, 0.3);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.theme-btn,
+.profile {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn {
+    background: #253254;
+    color: #ffd66b;
+    font-size: 18px;
+}
+
+.profile {
+    background: #e5edff;
+    color: #17264a;
+    font-size: 17px;
+}
+
+
+/*  MAIN LAYOUT  */
+
+.main-container {
+    padding: 12px 28px 28px;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 18px;
+}
+
+
+/*  HERO SECTION  */
+
+.stopwatch-hero {
+    min-height: 475px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 24px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(7, 24, 55, 0.12),
+            rgba(7, 24, 55, 0.48)
+        ),
+        url("images/heroBackground.png");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 10px 25px rgba(15, 30, 60, 0.16);
+}
+
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.running-badge {
+    background: #f52f3d;
+    opacity: 0.65;
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.running-badge.active {
+    opacity: 1;
+    background: #16a34a;
+}
+
+.running-badge i {
+    font-size: 9px;
+    margin-right: 5px;
+}
+
+.fullscreen-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(12, 27, 57, 0.65);
+    color: white;
+    font-size: 16px;
+}
+
+.timer-content {
+    text-align: center;
+    margin: auto 0;
+}
+
+.timer-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #e2eaff;
+    margin-bottom: 12px;
+}
+
+.timer-display {
+    font-size: clamp(38px, 5vw, 76px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timer-display span {
+    font-size: 0.55em;
+    color: #ffb6ba;
+}
+
+.time-units {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #e0e8ff;
+    margin-top: 5px;
+}
+
+
+/*  CONTROLS  */
+
+.stopwatch-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    padding-bottom: 5px;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.control-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(9, 25, 54, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    font-size: 21px;
+    transition: 0.3s;
+}
+
+.control-btn:hover {
+    transform: translateY(-4px);
+    background: #293c66;
+}
+
+.pause-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 29px;
+    background: #f52f3d;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 5px rgba(245, 47, 61, 0.3);
+}
+
+.pause-btn:hover {
+    background: #d91e30;
+}
+
+
+/*  RIGHT PANEL  */
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.welcome-card,
+.info-card,
+.laps-card {
+    background: white;
+    padding: 24px 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(20, 40, 80, 0.07);
+}
+
+.welcome-card {
+    border-left: 5px solid #f52f3d;
+}
+
+.welcome-card h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.welcome-card p,
+.info-card p {
+    color: #74809a;
+    font-size: 14px;
+    margin: 0;
+}
+
+.info-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info-card i {
+    font-size: 48px;
+    color: #f52f3d;
+    margin-bottom: 18px;
+}
+
+.info-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.laps-card {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.lap-row {
+    background: #f1f4fb;
+}
+
+
+/*  FOOTER  */
+
+.footer {
+    background: #101a38;
+    color: #d4dced;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer span {
+    color: white;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+
+/*  RESPONSIVE  */
+
+@media (max-width: 1000px) {
+
+    .nav-menu {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .stopwatch-hero {
+        min-height: 440px;
+    }
+
+    .right-panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 14px;
+        margin: 8px;
+    }
+
+    .navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .brand h2 {
+        font-size: 21px;
+    }
+
+    .brand > i {
+        font-size: 30px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        order: 3;
+        overflow-x: auto;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .stopwatch-hero {
+        min-height: 410px;
+        padding: 18px;
+    }
+
+    .timer-display {
+        font-size: clamp(32px, 9vw, 52px);
+    }
+
+    .time-units {
+        gap: 30px;
+    }
+
+    .stopwatch-controls {
+        gap: 25px;
+    }
+
+    .control-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .pause-btn {
+        width: 78px;
+        height: 78px;
+    }
+
+    .right-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .footer span {
+        display: block;
+        margin: 8px 0 0;
+    }
+
+}
